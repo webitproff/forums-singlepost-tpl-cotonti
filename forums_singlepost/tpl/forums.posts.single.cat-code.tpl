@@ -60,13 +60,17 @@
 				<!-- ENDIF -->
 			</div>
 			
-			<!-- IF {PHP.usr.isadmin} -->
+
 			<hr>
 			<!-- IF {FORUMS_POSTS_NEWPOST_FORUMPOST_LINK_EXTERNAL} -->
-			<!-- IF {FORUMS_POSTS_NEWPOST_FORUMPOST_LINK_EXTERNAL_TITLE} --><span class="mx-2">{FORUMS_POSTS_NEWPOST_FORUMPOST_LINK_EXTERNAL_TITLE}</span><!-- ENDIF -->
+			
+				<!-- IF {FORUMS_POSTS_NEWPOST_FORUMPOST_LINK_EXTERNAL_TITLE} -->
+				<span class="mx-2">{FORUMS_POSTS_NEWPOST_FORUMPOST_LINK_EXTERNAL_TITLE}</span>
+				<!-- ENDIF -->
+			
 			{FORUMS_POSTS_NEWPOST_FORUMPOST_LINK_EXTERNAL}
 			<!-- ENDIF -->
-			<!-- ENDIF -->
+
 		</div>
 		
 		<div class="card-footer text-end">
