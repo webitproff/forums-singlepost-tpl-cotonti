@@ -1,38 +1,46 @@
 <!-- BEGIN: MAIN -->
+<!-- forums.posts.single.cat-code.tpl -->
 <div class="container my-5">
+	
+	<h1 class="h4">{FORUMS_POSTS_TITLE}</h1>
+	
+	<!-- IF {FORUMS_POSTS_TOPICDESC} -->
+	<h2 class="h6 mb-4">{FORUMS_POSTS_TOPICDESC}</h2>
+	<!-- ENDIF -->
+	
 	<!-- BEGIN: FORUMS_POSTS_ROW -->
 	<article class="single-post">
 		<h1 class="h4">{FORUMS_POSTS_ROW_USER_NAME}</h1>
 		<div class="text-muted mb-3">
 			#{FORUMS_POSTS_ROW_ORDER} &bull; {FORUMS_POSTS_ROW_CREATION}
 		</div>
-		<div class="post-content">
+		<div class="mb-3"  id="protected-block" >
 			{FORUMS_POSTS_ROW_TEXT}
+			
+			<!-- IF {FORUMS_POSTS_ROW_FORUMPOST_LINK_EXTERNAL} -->
+			<div class="mb-3">							
+				<button class="btn btn-lg btn-info" onclick="openLink()">{FORUMS_POSTS_ROW_FORUMPOST_LINK_EXTERNAL_TITLE}</button>
+				
+				<script>
+					function openLink() {
+						window.open('{FORUMS_POSTS_ROW_FORUMPOST_LINK_EXTERNAL}', '_blank');
+					}
+				</script>
+			</div>
+			<!-- ENDIF -->
+			
 		</div>
 	</article>
 	<!-- END: FORUMS_POSTS_ROW -->
-
+	
 	<!-- BEGIN: FORUMS_POSTS_NEWPOST -->
 	<form action="{FORUMS_POSTS_NEWPOST_SEND}" method="post" name="newpost" class="card border-primary mt-5">
 		<div class="card-header fw-bold">
 			{PHP.L.Reply}
 		</div>
 		<div class="card-body">
-			<div class="mb-3"  id="protected-block" >
-				{FORUMS_POSTS_ROW_TEXT}
-				
-				<!-- IF {FORUMS_POSTS_ROW_FORUMPOST_LINK_EXTERNAL} -->
-				<div class="mb-3">							
-					<button class="btn btn-lg btn-info" onclick="openLink()">{FORUMS_POSTS_ROW_FORUMPOST_LINK_EXTERNAL_TITLE}</button>
-					
-					<script>
-						function openLink() {
-							window.open('{FORUMS_POSTS_ROW_FORUMPOST_LINK_EXTERNAL}', '_blank');
-						}
-					</script>
-				</div>
-				<!-- ENDIF -->
-				
+			<div class="mb-3 form-floating">
+				{FORUMS_POSTS_NEWPOST_TEXT}
 			</div>
 			
 			<div class="d-flex flex-wrap gap-3 align-items-center">
