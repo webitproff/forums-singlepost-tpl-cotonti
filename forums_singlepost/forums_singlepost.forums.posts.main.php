@@ -48,3 +48,25 @@ if (!empty($id) && !empty($s) && isset(Cot::$structure['forums'][$s])) {
     Cot::$structure['forums'][$s]['tpl'] = 'single';
 }
 */
+/* 
+// ---------- Универсальная отладка ----------
+$hook_name = 'forums.posts.main';          // имя текущего хука
+$vars_to_debug = ['id', 'p', 's', 'q'];    // какие глобальные переменные смотреть
+
+echo '<pre>HOOK: ' . $hook_name . "\n";
+foreach ($vars_to_debug as $var_name) {
+    global $$var_name;
+    echo $var_name . ' = ' . var_export($$var_name, true) . "\n";
+}
+echo '</pre>';
+die;
+// -------------------------------------------
+
+пример вывода
+HOOK: forums.posts.main
+id = 51
+p = 51
+s = 'e-moped-brands'
+q = 0
+
+*/
