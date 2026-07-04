@@ -7,7 +7,7 @@ Order=10
 ==================== */
 /**
  * forums_singlepost.forums.posts.main.php — Loads category-specific template for single forum posts (e.g. forums.posts.single.e-moped-brands.tpl)
- * Register data in $db_core and $db_config. Setup & Config File for the Plugin
+ * подключаемся к forums.posts.main и добавляем свои хотелки
  * Плагин Forums Single Post Template для Cotonti CMF (PHP 8.4+, MySQL 8.0+)
  * Версия: 1.0.0
  * Дата: 2026-07-03
